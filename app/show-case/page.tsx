@@ -1,12 +1,12 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Modal } from 'react-bootstrap';
 import { useRouter } from 'next/navigation';
 
-export default function Page() {
+function PageContent() {
     const searchParams = useSearchParams();
     const code = searchParams.get('code');
     const [isRefresh, setIsRefresh] = useState<any>(Boolean);
@@ -95,5 +95,14 @@ export default function Page() {
                 <></>
             )}
         </center>
+    );
+}
+
+// Wrap the component with Suspense and provide a fallback UI
+export default function Page() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PageContent />
+        </Suspense>
     );
 }
