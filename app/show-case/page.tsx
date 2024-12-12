@@ -67,7 +67,7 @@ function PageContent() {
             if (!response.ok) {
                 throw new Error('Failed to delete code');
             }
-            router.push('http://localhost:3000/');
+            router.push('https://front-end-hn5g.vercel.app/');
         } catch (error) {
             console.error('Error deleting code:', error);
         }
