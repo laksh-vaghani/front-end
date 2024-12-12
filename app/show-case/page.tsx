@@ -81,13 +81,13 @@ function PageContent() {
                     <Modal.Header closeButton>
                         <Modal.Title>Modal heading</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                    <Modal.Body>Waring! If you Reload thi page, you may forgot your conversation</Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={handleClose}>
-                            Close
+                            Deny
                         </Button>
                         <Button variant="primary" onClick={handleRedirect}>
-                            Save Changes
+                            Allow
                         </Button>
                     </Modal.Footer>
                 </Modal>
