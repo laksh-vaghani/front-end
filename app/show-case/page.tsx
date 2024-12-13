@@ -13,7 +13,10 @@ function PageContent() {
     const [isRefresh, setIsRefresh] = useState<any>(false);
     const [show, setShow] = useState(false);
     const router = useRouter();
-    const socket = io("http://localhost:1257");
+    const socket = io("http://localhost:1257", {
+    transports: ['websocket', 'polling']
+});
+
     const [message, setMessage] = useState<any>();
 
     const handleInput = (e: any) => {
