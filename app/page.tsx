@@ -7,7 +7,9 @@ export default function Home() {
   const [qrCodeData, setQrCodeData] = useState<any>(null);
   const [error, setError] = useState(null);
   const [status, setStatus] = useState("Waiting for connection...");
-  const socket = io("http://localhost:1257"); // Connect to the Socket.IO server
+  const socket = io("http://localhost:1257", {
+    transports: ['websocket', 'polling']
+});
 
   useEffect(() => {
     // Fetch QR code data and join room with the code
